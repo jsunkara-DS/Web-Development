@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photography Club</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src = "js/load.js"></script>
+    
+  </head>
+  <body >
+    <div id="wrapper" class="fade-in">
+      <div id="intro">
+        <h1>Photography Club</h1>
+       </div>
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="Craps.html">Craps</a></li>
+          <li><a href="Draw.html">Draw</a></li>
+          <li ><a href="table.html" >Interest</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div id="main">
+        <div id="counter">
+          <p>Seconds you have spent viewing this page so far:
+            <span id = "soFar">0</span></p>
+        </div>
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+      
+      </div>
+      <footer id="footer">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:natureclicks001@gmail.com"
+              >natureclicks001@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Address</h3>
+          <p>Peoria, USA</p>
+        </section>
+      </footer>
+      <div class="bg fixed" style="transform: none"></div>
+    </div>
+
+    <script>
+        function myMap() {
+     
+        let bradley = {lat: 40.697426, lng: -89.616036};
+        var myMap = new google.maps.Map(document.getElementById("googleMap"),{
+            zoom: 15,
+            center: bradley
+            });
+        
+        
+
+        let marker = new google.maps.Marker({
+          position:bradley,
+          animation: google.maps.Animation.BOUNCE,
+          map: myMap
+           
+        });
+      
+    }
+
+
+    </script>
+    
+   
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoGPD1cNn5Hp1WV-MJpA7jFBScSW_3s1o&callback=myMap"></script>
+        
+  </body>
+</html>

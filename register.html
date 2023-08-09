@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photography Club</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+    <script lang="JavaScript" src="js/registerFormValid.js" ></script>
+    <script>
+  
+        function validateForm ( form ) {
+           let errors = document.getElementsByClassName("error")
+
+           for (let i = 0; i < errors.length; i++) {
+             errors[i].remove();
+            }
+            
+            
+            requiredText = new Array("first name","last name", "mobile", "email","age","password","confirmPassword","about");
+            requiredPassword = new Array("password","confirmPassword");
+
+            requiredSelect = new Array("interested","quality", "type");
+            requiredRadio  = new Array( "gender" );
+            requiredCheckbox = new Array( "terms" );
+          
+            
+            return requireValues ( form, requiredText   ) &&
+                  checkPassword ( form, requiredPassword[0],requiredPassword[1] ) &&
+                  // requireSelects( form, requiredSelect ) &&
+                  requireRadios ( form, requiredRadio  ) &&
+                  requireCheckboxs ( form, requiredCheckbox ) &&
+                   checkProblems ();
+        }
+     
+      </script>
+    
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src = "js/load.js"></script>
+  </head>
+  <body>
+    <div id="wrapper" class="fade-in">
+      <div id="intro">
+        <h1>Photography Club</h1>
+      </div>
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li class="active"><a href="register.html">Register</a></li>
+          <li><a href="Craps.html">Craps</a></li>
+          <li><a href="Draw.html">Draw</a></li>
+          <li ><a href="table.html" >Interest</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div id="main">
+        <div id="counter">
+          <p>Seconds you have spent viewing this page so far:
+            <span id = "soFar">0</span></p>
+        </div>
+        <!-- registration begins here-->
+        <form method="post"  autocomplete="on" onsubmit="return validateForm(this)">
+          <div class="row gtr-uniform">
+            <div class="col-6 col-12-xsmall">
+              <input
+                type="text"
+                name="first name"
+                id="fname"
+                value=""
+                placeholder="First Name"
+               
+              />
+            </div>
+            <div class="col-6 col-12-xsmall">
+              <input
+                type="text"
+                name="last name"
+                id="lname"
+                value=""
+                placeholder="Last Name"
+               
+              />
+            </div>
+            <div class="col-4 col-12-small">
+              <input type="radio" id="male" name="gender" checked="" value="He / him" />
+              <label for="male">He / him</label>
+            </div>
+            <div class="col-4 col-12-small">
+              <input type="radio" id="female" name="gender" value="She / Her"/>
+              <label for="female">She / Her</label>
+            </div>
+            <div class="col-4 col-12-small">
+              <input type="radio" id="nosay" name="gender" value="Prefer Not To Say"/>
+              <label for="nosay">Prefer Not To Say</label>
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value=""
+                placeholder="Email"
+                onchange="checkEmail(this)"
+            
+              />
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value=""
+                placeholder="Password"
+                
+              />
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                value=""
+                placeholder="Confirm Password"
+               
+              />
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="tel"
+                name="mobile"
+                id="mobile"
+                value=""
+                placeholder="Phone Number (012-345-6789)"
+                autocomplete="on"
+                pattern=".{10,15}"
+                
+               onchange="checkPhone(this)"
+              />
+              
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="number"
+                name="age"
+                id="age"
+                value=""
+                placeholder="Age"
+                autocomplete="on"
+              
+                
+               onchange="checkAge(this)"
+              />
+              
+            </div>
+            <div class="col-12">
+              <select name="type" id="type">
+                <option value="">- Photography Type -</option>
+                <option value="Architectural Photography">
+                  Architectural Photography
+                </option>
+                <option value="Astrophotography">Astrophotography</option>
+                <option value="Candid photography">Candid photography</option>
+                <option value="Cityscape photography">
+                  Cityscape photography
+                </option>
+                <option value="Nature photography">Nature photography</option>
+                <option value="Portrait Photography">
+                  Portrait Photography
+                </option>
+                <option value="Wildlife Photography">
+                  Wildlife Photography
+                </option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="interested">Interested In</label>
+              <select
+                name="interested"
+                id="interested"
+                multiple
+                size="5"
+                style="height: auto"
+              >
+              <option value="Animals">Animals</option>
+              <option value="Anime">Anime</option>
+              <option value="Birds">Birds</option>
+              <option value="Cityscapes">Cityscapes</option>
+              <option value="Nature">Nature</option>
+              <option value="Portraits">Portraits</option>
+              <option value="Water">Water</option>
+              </select>
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                list="qualities"
+                type="text"
+                name="quality"
+                id="quality"
+                value=""
+                placeholder="Photo Quality"
+              />
+              <datalist id="qualities">
+                <option value="720p"></option>
+                <option value="1080p"></option>
+                <option value="2k"></option>
+                <option value="4k"></option>
+                <option value="8k"></option>
+              </datalist>
+            </div>
+            <div class="col-12">
+              <textarea
+                name="about"
+                id="about"
+                placeholder="Something about yourself & your passion for photography..."
+                rows="6"
+           
+              ></textarea>
+            </div>
+            <div class="col-12 col-12-small">
+              <input type="checkbox" id="terms" name="terms" />
+              <label for="terms"
+                >I Agree to all of your terms and conditions. </label
+                >
+            </div>
+            <input type="hidden" name="formType" value="register" />
+            <div class="col-12">
+              <ul class="actions">
+                <li>
+                  <input type="submit" value="Submit" class="primary" />
+                </li>
+                <li><input type="reset" value="Reset" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+      <footer id="footer">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:natureclicks001@gmail.com"
+              >natureclicks001@gmail.com</a
+            >
+          </p>
+        </section>
+        <section>
+          <h3>Address</h3>
+          <p>Peoria, USA</p>
+        </section>
+      </footer>
+      <div class="bg fixed" style="transform: none"></div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

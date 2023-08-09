@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photography Club</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script src = "js/load.js"></script>
+
+    <style type="text/css">
+      table         { width: 800px;
+        margin: auto;
+                      border-collapse:collapse; 
+                      }
+      table, td, th { border: 2px solid black; 
+                      padding: 6px; }
+      th            { text-align: center; 
+                      color: white;
+                      background-color: rgb(224, 100, 47); }
+
+    
+      tr.oddrow     {
+         background-color: blue;
+         z-index: 1;
+      }
+      tr.evenrow    { background-color: rgb(221, 221, 112);}
+   </style>
+
+    
+  </head>
+  <body>
+    <div id="wrapper" class="fade-in">
+      <div id="intro">
+        <h1>Photography Club</h1>
+       </div>
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="Craps.html">Craps</a></li>
+          <li><a href="Draw.html">Draw</a></li>
+          <li class="active"><a href="table.html" >Interest</a></li>
+          <li><a href="about.html">About</a></li>
+          
+        </ul>
+      </nav>
+      <div id="main">
+        <div id="counter">
+          <p>Seconds you have spent viewing this page so far:
+            <span id = "soFar">0</span></p>
+        </div>
+
+        <article >
+          <div id="table"></div>
+
+        </article>
+        
+
+      </div>
+      <footer id="footer">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:natureclicks001@gmail.com"
+              >natureclicks001@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Address</h3>
+          <p>Peoria, USA</p>
+        </section>
+      </footer>
+      <div class="bg fixed" style="transform: none"></div>
+    </div>
+    <script src="assets/js/main.js"></script>
+    <script>
+      var  tableDiv = document.getElementById("table");
+
+      var amount; // current amount of money
+      var principal = 1000.00; // principal amount
+      var rate = 0.05; // interest rate
+
+      var table = document.createElement("table");
+      var caption = document.createElement("caption");
+      var captionText = document.createTextNode("Calculating Compound Interest");
+      caption.appendChild(captionText);
+      table.appendChild(caption);
+      tableDiv.appendChild(table);
+
+      var thead = document.createElement("thead");
+      var tr = document.createElement("tr");
+      var th1 = document.createElement("th");
+      var th2 = document.createElement("th");
+      var th1Text = document.createTextNode("Year");
+      var th2Text = document.createTextNode("Amount on deposit");
+      th1.appendChild(th1Text);
+      th2.appendChild(th2Text);
+      tr.appendChild(th1);
+      tr.appendChild(th2);
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      var tbody = document.createElement("tbody");
+
+         for ( var year = 1; year <= 20; ++year )
+      {
+         amount = principal * Math.pow( 1.0 + rate, year );
+         if ( year % 2 !== 0 ){
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "oddrow");
+          var td1 = document.createElement("td");
+          var td2 = document.createElement("td");
+          var td1Text = document.createTextNode(year);
+          var td2Text = document.createTextNode(amount.toFixed(2));
+          td1.appendChild(td1Text);
+          td2.appendChild(td2Text);
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tbody.appendChild(tr);
+         }
+         else{
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "evenrow");
+          var td1 = document.createElement("td");
+          var td2 = document.createElement("td");
+          var td1Text = document.createTextNode(year);
+          var td2Text = document.createTextNode(amount.toFixed(2));
+          td1.appendChild(td1Text);
+          td2.appendChild(td2Text);
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tbody.appendChild(tr);
+         }
+        
+      }
+      
+      table.appendChild(tbody);
+
+   </script>
+  </body>
+</html>

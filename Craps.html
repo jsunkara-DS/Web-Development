@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!-- Fig. 9.7: Craps.html -->
+<!-- Craps game simulation. -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Craps Game Simulation</title>
+      <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script src = "js/load.js"></script>
+     
+      <script src = "js/craps.js"></script>
+   </head>
+   <body>
+
+      <div id="wrapper" class="fade-in">
+         <div id="intro">
+           <h1>Photography Club</h1>
+          </div>
+         <nav id="nav">
+           <ul class="links">
+             <li><a href="index.html">Home</a></li>
+             <li ><a href="login.html">Login</a></li>
+             <li><a href="register.html">Register</a></li>
+             
+             <li class="active"><a href="Craps.html">Craps</a></li>
+             <li><a href="Draw.html">Draw</a></li>
+             <li ><a href="table.html" >Interest</a></li>
+             <li><a href="about.html">About</a></li>
+           </ul>
+         </nav>
+         <div id="main">
+           <div id="counter">
+             <p>Seconds you have spent viewing this page so far:
+               <span id = "soFar">0</span></p>
+           </div>
+
+           <article id = "game">
+            <audio id = "dicerolling" preload = "auto">
+               <source   src = "assets/dicerolling.mp3"
+                  type = "audio/mpeg"></audio>
+                  
+            
+            <p><a href = "CrapsRules.html">Click here for a short video
+               explaining the basic Craps rules</a></p>
+            <div id="dice_container">
+               <div  id = "pointDiv">
+                  <p class = "point">Point is:</p>
+                  <img id = "pointDie1" src = "images/dice/blank.png"  
+                     alt = "Die 1 of Point Value">
+                  <img id = "pointDie2" src = "images/dice/blank.png"
+                     alt = "Die 2 of Point Value">
+               </div>
+               <div class = "rollDiv">
+                  <img id = "rollDie1" src = "images/dice/blank.png" 
+                     alt = "Die 1 of Roll Value">
+                  <img id = "rollDie2" src = "images/dice/blank.png" 
+                     alt = "Die 2 of Roll Value">
+               </div>
+            </div>
+            <form action = "#">
+               <input id = "play" type = "button" value = "Play">
+               <input id = "roll" type = "button" value = "Roll" disabled>
+            </form>
+            <p id = "messages" class = "red">Click Play to start the game</p> 
+                 
+
+
+
+           </article>
+        
+         </div>
+         <footer id="footer">
+           <section>
+             <h3>Email</h3>
+             <p>
+               <a href="mailto:natureclicks001@gmail.com"
+                 >natureclicks001@gmail.com</a>
+             </p>
+           </section>
+           <section>
+             <h3>Address</h3>
+             <p>Peoria, USA</p>
+           </section>
+         </footer>
+         <div class="bg fixed" style="transform: none"></div>
+       </div>
+       <script src="assets/js/main.js"></script>
+    
+   </body>
+</html>
+
+<!--
+**************************************************************************
+* (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *
+* Pearson Education, Inc. All Rights Reserved.                           *
+*                                                                        *
+* DISCLAIMER: The authors and publisher of this book have used their     *
+* best efforts in preparing the book. These efforts include the          *
+* development, research, and testing of the theories and programs        *
+* to determine their effectiveness. The authors and publisher make       *
+* no warranty of any kind, expressed or implied, with regard to these    *
+* programs or to the documentation contained in these books. The authors *
+* and publisher shall not be liable in any event for incidental or       *
+* consequential damages in connection with, or arising out of, the       *
+* furnishing, performance, or use of these programs.                     *
+**************************************************************************
+-->

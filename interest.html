@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photography Club</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div id="wrapper" class="fade-in">
+      <div id="intro">
+        <h1>Photography Club</h1>
+      </div>
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+		  <li class="active"><a href="interest.html">Calculate Compound Interest</a></li>
+        </ul>
+      </nav>
+	  <head>
+      <meta charset="utf-8">
+      <title>Calculating Compound Interest</title>
+	  <meta charset="utf-8" />
+      <style type="text/css">
+         table         { width: 600px;
+                         border-collapse:collapse; 
+                         background-color: lightblue; }
+         table, td, th { border: 1px solid black; 
+                         padding: 4px; }
+         th            { text-align: left; 
+                         color: white;
+                         background-color: darkblue; }
+         tr.oddrow     { background-color: white; }
+      </style>
+      <script>
+
+         var amount; // current amount of money
+         var principal = 1000.00; // principal amount
+         var rate = 0.05; // interest rate
+
+         document.writeln( "<table>" ); // begin the table
+         document.writeln( 
+            "<caption>Calculating Compound Interest</caption>" );
+         document.writeln( 
+            "<thead><tr><th>Year</th>" ); // year column heading
+         document.writeln(
+            "<th>Amount on deposit</th>" ); // amount column heading
+         document.writeln( "</tr></thead><tbody>" );
+
+         // output a table row for each year
+         for ( var year = 1; year <= 20; ++year )
+         {
+            amount = principal * Math.pow( 1.0 + rate, year );
+
+            if ( year % 2 !== 0 )
+               document.writeln( "<tr class='oddrow'><td>" + year + 
+                  "</td><td>" + amount.toFixed(2) + "</td></tr>" );
+            else
+               document.writeln( "<tr><td>" + year + 
+                  "</td><td>" + amount.toFixed(2) + "</td></tr>" );
+         } //end for
+
+         document.writeln( "</tbody></table>" );
+
+      </script></head><body><table>
+
+
+</body>
+      <div id="main">
+        <article class="post featured">
+          <header class="major">
+            <span class="date">January 04, 2023</span>
+            <h2>
+              <a href="#">Picture Of The Week</a>
+            </h2>
+            <p>
+              This is one of the pictures that have been posted by our club
+              members<br />
+              and has been trending for the past week.
+            </p>
+          </header>
+          <a href="#" class="image main"
+            ><img src="images/pic01.jpg" alt="Nature-pic1"
+          /></a>
+          <ul class="actions special">
+            <li><a href="#" class="button large">View More</a></li>
+          </ul>
+        </article>
+        <div class="posts">
+          <article>
+            <header>
+              <span class="date">January 12, 2023</span>
+              <h2>
+                <a href="#">Nature Pic 1</a>
+              </h2>
+              <span>#NaturePhotography</span>
+            </header>
+            <a href="#" class="image fit"
+              ><img src="images/pic02.jpg" alt="Nature-pic2"
+            /></a>
+          </article>
+          <article>
+            <header>
+              <span class="date">January 24, 2023</span>
+              <h2>
+                <a href="#">Nature Pic 2</a>
+              </h2>
+              <span>#NaturePhotography</span>
+            </header>
+            <a href="#" class="image fit"
+              ><img src="images/pic03.jpg" alt="Nature-pic3"
+            /></a>
+          </article>
+          <article>
+            <header>
+              <span class="date">February 14, 2023</span>
+              <h2>
+                <a href="#">Nature Pic 3</a>
+              </h2>
+              <span>#NaturePhotography</span>
+            </header>
+            <a href="#" class="image fit"
+              ><img src="images/pic04.jpg" alt="Nature-pic4"
+            /></a>
+          </article>
+          <article>
+            <header>
+              <span class="date">February 18, 2023</span>
+              <h2>
+                <a href="#">Nature Pic 4</a>
+              </h2>
+              <span>#NaturePhotography</span>
+            </header>
+            <a href="#" class="image fit"
+              ><img src="images/pic05.jpg" alt="Nature-pic5"
+            /></a>
+          </article>
+        </div>
+      </div>
+      <footer id="footer">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:natureclicks001@gmail.com"
+              >natureclicks001@gmail.com</a
+            >
+          </p>
+        </section>
+        <section>
+          <h3>Address</h3>
+          <p>Peoria, USA</p>
+        </section>
+      </footer>
+      <div class="bg fixed" style="transform: none"></div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photography Club</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script src = "js/load.js"></script>
+    <script lang="JavaScript" src="js/registerFormValid.js" ></script>
+    <script>
+       function validateForm ( form ) {
+           let errors = document.getElementsByClassName("error")
+
+           for (let i = 0; i < errors.length; i++) {
+             errors[i].remove();
+            }
+            
+            
+            requiredText = new Array( "email","password");
+          
+          
+            
+            return requireValues ( form, requiredText   ) &&
+                
+                   checkProblems ();
+        }
+    </script>
+  </head>
+  <body>
+    <div id="wrapper" class="fade-in">
+      <div id="intro">
+        <h1>Photography Club</h1>
+       </div>
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="Craps.html">Craps</a></li>
+          <li><a href="Draw.html">Draw</a></li>
+          <li ><a href="table.html" >Interest</a></li>
+          <li><a href="about.html">About</a></li>
+          
+        </ul>
+      </nav>
+      <div id="main">
+        <div id="counter">
+          <p>Seconds you have spent viewing this page so far:
+            <span id = "soFar">0</span></p>
+        </div>
+        <!-- login begins here-->
+        <form method="post" action="cgi-bin/login.cgi" autocomplete="on" onsubmit="return validateForm(this)">
+          <div class="row gtr-uniform">
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value=""
+                placeholder="Email"
+                onchange="checkEmail(this)"
+              />
+            </div>
+            <div class="col-12 col-12-xsmall">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value=""
+                placeholder="Password"
+               
+              />
+            </div>
+            <input type="hidden" name="formType" value="login" />
+            <div class="col-12">
+              <ul class="actions">
+                <li>
+                  <input type="submit" value="Login" class="primary" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+      <footer id="footer">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:natureclicks001@gmail.com"
+              >natureclicks001@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Address</h3>
+          <p>Peoria, USA</p>
+        </section>
+      </footer>
+      <div class="bg fixed" style="transform: none"></div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photography Club</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Project About Photography Club" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, perl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+
+    <script src = "js/load.js"></script>
+    <script async src = "js/draw.js"></script>
+   
+  </head>
+  <body>
+    <div id="wrapper" class="fade-in">
+      <div id="intro">
+        <h1>Photography Club</h1>
+       </div>
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="Craps.html">Craps</a></li>
+          <li class="active" ><a href="Draw.html">Draw</a></li>
+          <li ><a href="table.html" >Interest</a></li>
+          <li><a href="about.html">About</a></li>
+          
+        </ul>
+      </nav>
+      <div id="main">
+        <div id="counter">
+          <p>Seconds you have spent viewing this page so far:
+            <span id = "soFar">0</span></p>
+        </div>
+        
+        <div id="draw_container">
+
+            <table id = "canvas">
+                <caption>Hold <em>Ctrl</em> (or <em>Control</em>) to draw blue. 
+                   Hold <em>Shift</em> to draw red.</caption>
+                <tbody id = "tablebody"></tbody>
+             </table>
+
+           </div>
+
+        
+      </div>
+      <footer id="footer">
+        <section>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:natureclicks001@gmail.com"
+              >natureclicks001@gmail.com</a>
+          </p>
+        </section>
+        <section>
+          <h3>Address</h3>
+          <p>Peoria, USA</p>
+        </section>
+      </footer>
+      <div class="bg fixed" style="transform: none"></div>
+    </div>
+    <script src="assets/js/main.js"></script>
+    
+  </body>
+</html>
